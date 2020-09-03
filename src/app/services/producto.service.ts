@@ -12,14 +12,14 @@ export class ProductoService {
     "nombre": "Celular",
     "precio": 1500,
     "cantidad": 10,
-    "imagen": "http://dummyimage.com/102x217.jpg/dddddd/000000" 
+    "imagen": "https://ar.celulares.com/fotos/tecno-camon-15-pro-86037-m.jpg" 
   },
   {
     "id": "2",
     "nombre": "Tablet",
     "precio": 3000,
     "cantidad": 3,
-    "imagen": "http://dummyimage.com/131x116.jpg/5fa2dd/ffffff"
+    "imagen": "https://thumb.pccomponentes.com/w-220-220/articles/15/157938/1.jpg"
     
     
     },
@@ -28,7 +28,7 @@ export class ProductoService {
       "nombre": "tv",
       "precio": 5600,
       "cantidad": 0,
-      "imagen": "http://dummyimage.com/131x116.jpg/5fa2dd/ffffff"
+      "imagen": "https://images.samsung.com/is/image/samsung/latin-fhd-t5300-un43t5300apxpa-frontblack-229166470?$PD_GALLERY_L_JPG$"
       
       
       }]

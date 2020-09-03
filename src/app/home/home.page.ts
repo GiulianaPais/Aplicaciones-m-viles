@@ -9,6 +9,7 @@ import { Producto } from '../modelo/producto';
 })
 export class HomePage {
   private productos;
+  private cantidad=0;
   constructor(private prodSrv: ProductoService) {
     let prod = new Producto();
     prod.id = "4";

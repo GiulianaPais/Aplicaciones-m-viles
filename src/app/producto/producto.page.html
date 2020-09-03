@@ -5,11 +5,14 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    
+  
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   {{producto.precio}}
 
-</ion-content>
+  <ion-button (click)="onClick()" expand="block" shape="round">
+    Agregar al carro de compras
+  </ion-button>>
+   </ion-content>
