@@ -22,5 +22,7 @@ export class ProductoPage implements OnInit { //implementar una interfase
         
     });
   }
-
+  public agregarCarrito(): void {
+    this.prodSrv.carrito.push(this.producto);
+   }
 }

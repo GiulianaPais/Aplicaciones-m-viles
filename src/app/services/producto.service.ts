@@ -33,7 +33,7 @@ export class ProductoService {
       
       }]
  
- 
+  public carrito: Array<Producto> = [];
   constructor() { }
   
   public obtenerTodos ()
