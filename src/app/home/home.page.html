@@ -3,7 +3,7 @@
     <ion-title>
       Lista Productos
     </ion-title>
-    <ion-avatar slot= "end">
+    <ion-avatar slot= "end" (click) ="verCarrito()">
       <ion-badge  class="cantidadCarrito" color="danger">{{carrito.length}}</ion-badge>
       <ion-img class="img" src="../../assets/carrito.png" ></ion-img>
     </ion-avatar>

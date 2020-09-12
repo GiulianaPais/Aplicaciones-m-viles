@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
+import { Producto } from '../modelo/producto';
 
 @Component({
   selector: 'app-producto',
@@ -9,7 +10,7 @@ import { ProductoService } from '../services/producto.service';
 })
 export class ProductoPage implements OnInit { //implementar una interfase
 
-  private producto;
+  private producto =new Producto();
   
   constructor(private activeteRoute: ActivatedRoute,
   private prodSrv:ProductoService) { }
@@ -17,8 +18,11 @@ export class ProductoPage implements OnInit { //implementar una interfase
   ngOnInit() {
     this.activeteRoute.paramMap.subscribe(
       paramMap => {
-        this.producto =
-          this.prodSrv.obtenerPorId(paramMap.get("id"))
+        
+        this.prodSrv.obtenerPorId(paramMap.get("id"))
+          .subscribe(datos => {
+            this.producto = datos;
+          });
         
     });
   }

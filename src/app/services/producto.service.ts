@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FORMERR } from 'dns';
+//import { FORMERR } from 'dns';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Producto } from '../modelo/producto';
 import { HttpClient } from '@angular/common/http';
@@ -35,7 +35,7 @@ export class ProductoService {
       }]*/
  
   public carrito: Array<Producto> = [];
-  constructor(private httpClien: HttpClient) { }
+  constructor(private httpClien:HttpClient) { }
   
   public obtenerTodos ()
   {
@@ -48,10 +48,13 @@ export class ProductoService {
          return prod;
      }
    }*/
-    return null;
+   return this.httpClien.get<Producto>("http://localhost:3000/productos/"+id);
   }
   public agregar(prod: Producto) {
-    this.productos.push(prod);
+   // this.productos.push(prod);
+  }
+  public getCarrito() {
+    return this.carrito;
   }
 }
 
