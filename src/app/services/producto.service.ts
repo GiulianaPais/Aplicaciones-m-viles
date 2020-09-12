@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { FORMERR } from 'dns';
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Producto } from '../modelo/producto';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductoService {
-  private productos:Array<Producto> = [{
+  /*private productos:Array<Producto> = [{
     "id": "1",
     "nombre": "Celular",
     "precio": 1500,
@@ -31,20 +32,23 @@ export class ProductoService {
       "imagen": "https://images.samsung.com/is/image/samsung/latin-fhd-t5300-un43t5300apxpa-frontblack-229166470?$PD_GALLERY_L_JPG$"
       
       
-      }]
+      }]*/
  
   public carrito: Array<Producto> = [];
-  constructor() { }
+  constructor(private httpClien: HttpClient) { }
   
   public obtenerTodos ()
   {
-    return this.productos;
+   // return this.productos;
+    return this.httpClien.get<Producto[]>("http://localhost:3000/productos");
   }
-  public obtenerPorId(id:String) {
-    for (let prod of this.productos) {
-      if (prod.id == id)
-        return prod;
-    }
+  public obtenerPorId(id: String) {
+    /* for (let prod of this.productos) {
+       if (prod.id == id) {
+         return prod;
+     }
+   }*/
+    return null;
   }
   public agregar(prod: Producto) {
     this.productos.push(prod);

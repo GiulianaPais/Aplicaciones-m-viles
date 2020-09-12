@@ -9,7 +9,7 @@ import { Producto } from '../modelo/producto';
 })
 export class HomePage {
   private productos;
-  private carrito: Array<Productos> = [];
+  private carrito: Array<Producto> = [];
   private cantidad = 0;
   constructor(private prodSrv: ProductoService) {
    /* let prod = new Producto();
@@ -18,7 +18,10 @@ export class HomePage {
     prod.nombre = "led";
     prod.precio = 100;
     this.prodSrv.agregar(prod);*/
-    this.productos = prodSrv.obtenerTodos();
+    //this.productos = prodSrv.obtenerTodos();
+    prodSrv.obtenerTodos().subscribe(datos => {
+      this.productos = datos;
+    })
     this.carrito = prodSrv.carrito;
   }
 }

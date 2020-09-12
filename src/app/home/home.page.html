@@ -4,17 +4,13 @@
       Lista Productos
     </ion-title>
     <ion-avatar slot= "end">
-      <ion-badge color="danger" class="cantidadCarrito">{{carrito.length}}</ion-badge>
-      <ion-img src="../../assets/carrito.png"></ion-img>
-      <!--<img src="../../assets/carrito.png"/>-->
-      
+      <ion-badge  class="cantidadCarrito" color="danger">{{carrito.length}}</ion-badge>
+      <ion-img class="img" src="../../assets/carrito.png" ></ion-img>
     </ion-avatar>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-
   <ion-list>
     <ion-item *ngFor="let item of productos" [routerLink]="['/home',item.id]">
       <ion-avatar slot="start">
